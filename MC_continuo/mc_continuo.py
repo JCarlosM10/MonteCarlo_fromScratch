@@ -25,7 +25,8 @@ def decay(N0):
     #plot de las soluciones Monte Carlo y analitica, comparativa visual
     plt.plot(t, N_t, label='Monte Carlo')
     plt.plot(t, analytic, '--', label='Analítica $N(t)=N_0 e^{-\lambda t}$')
-    plt.title('Monte Carlo vs Solucion analítica\nVisualización de Convergencia Estadística y Reduccion de Varianza')
+    plt.title('Monte Carlo vs Solucion analítica',
+    '\nVisualización de Convergencia Estadística y Reduccion de Varianza')
     plt.xlabel('time $t$')
     plt.ylabel('counts $N$')
     plt.legend()
