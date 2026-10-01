@@ -4,8 +4,8 @@ from dataclasses import dataclass
 @dataclass
 class Material:
 
-    sigma_a: float
-    sigma_s: float
+    sigma_a: float      #absortion
+    sigma_s: float      #scattering
 
     def __post_init__(self):
         if self.sigma_a < 0 or self.sigma_s < 0:

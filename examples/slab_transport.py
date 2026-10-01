@@ -10,14 +10,14 @@ from mc.simulation.simulation import Simulation
 
 def main():
     geometry = Slab(0.0, 10.0)
-    material = Material(sigma_a=1.0, sigma_s=1.0)
+    material = Material(sigma_a=0.5, sigma_s=0.5)
 
     rng = XorShift64Star(seed=123456789)
 
     source = FixedSource(
-        position=0.0,
+        position=1.0,
         direction=+1,
-        energy=100.0,
+        energy=1.0,
     )
 
     tally = FluxTally(
@@ -38,7 +38,10 @@ def main():
 
     print(tally.flux(histories=10000))
     plt.plot(tally.flux(histories=10000))
+    #plt.yscale('log')
     plt.show()
+
+
 
 
 if __name__ == "__main__":
